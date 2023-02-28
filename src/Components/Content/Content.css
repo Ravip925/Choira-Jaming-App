@@ -50,7 +50,7 @@
 
 .host {
     position: absolute;
-    top: 20px;
+    top: 0px;
     width: 100px;
     height: 35px;
     padding: 5px;
@@ -72,16 +72,18 @@
     color: rgb(204, 204, 204);
     background-color: rgba(0, 0, 0, 0.442);
     position: absolute;
-    top: 7%;
-    right: 10%;
+    top: 3%;
+    left: 110%;
 }
-.content_left > div{
+
+.content_left>div {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.sidebar{
+
+.sidebar {
     position: absolute;
     left: 0;
     top: 0;
@@ -90,4 +92,13 @@
     height: 40px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.videobox {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
 }
