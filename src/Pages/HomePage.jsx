@@ -4,7 +4,7 @@ import Footer from "../Components/Footer/Footer";
 import NavBar from "../Components/NavBar/NavBar";
 
 const HomePage = () => {
-  const [users, setUsers] = useState(4);
+  const [users, setUsers] = useState("");
   return (
     <>
       <NavBar setUsers={setUsers} />

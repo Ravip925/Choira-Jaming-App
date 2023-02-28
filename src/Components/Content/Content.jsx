@@ -1,24 +1,19 @@
-import { Duo, Menu, Videocam } from "@mui/icons-material";
-import styled from "styled-components";
-import data from "../data";
+import { Menu, Videocam } from "@mui/icons-material";
+import FirstUser from "../videoComp/FirstUser";
+import FourthUser from "../videoComp/FourthUser";
+import SecondUser from "../videoComp/SecondUser";
+import ThirdUser from "../videoComp/ThirdUser";
 import "./Content.css";
 
-const Box = styled.div`
-  background: url(${(props) => props.image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
-
 const Content = ({ users }) => {
-  const layout = users == 1 ? "oneUser" : "";
-  console.log(layout);
+  console.log(users)
   return (
     <>
       <div className="main">
         <div className="content_wrapper">
           <div className="content_left">
             <div>
+            <div className="sidebar"></div>
               <Videocam
                 style={{
                   fontSize: "2.5rem",
@@ -34,25 +29,16 @@ const Content = ({ users }) => {
             </div>
           </div>
           <div className="content_right">
-            {data.map(
-              (item, index) =>
-                index < users && (
-                  <Box
-                    image={item.image}
-                    key={item.id}
-                    id={layout}
-                    className="box_container"
-                  >
-                    {item.isHost && (
-                      <div className="host">
-                        <span>(HOST)</span> <Duo />
-                      </div>
-                    )}
-                    <div className="name">
-                      <h3>{item.name}</h3>
-                    </div>
-                  </Box>
-                )
+            {users ? (
+              <>
+                {users === "0" && <FourthUser />}
+                {users === "1" && <FirstUser />}
+                {users === "2" && <SecondUser />}
+                {users === "3" && <ThirdUser />}
+                {users === "4" && <FourthUser />}
+              </>
+            ) : (
+              <FirstUser/>
             )}
           </div>
         </div>
